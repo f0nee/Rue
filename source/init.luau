@@ -11,23 +11,23 @@
 ]]--
 
 _G.__internal_debug = function(message) 
-    if _G.debug then
-        warn("[Rue]: " .. message .. " (At Time: " .. os.time() .. ")")
-    end
+	if _G.debug then
+		warn("[Rue]: " .. message .. " (At Time: " .. os.time() .. ")")
+	end
 end
 
 local Init = {
-    Components = require(script.Parent.components),
-    Classes = require(script.Parent.classes),
+	Components = require(script.Parent.Components),
+	Classes = require(script.Parent.Classes),
 }
 
 Init.new = function(type)
-    if Init[type] then
-        return Init[type]
-    else
-        _G.__internal_debug("Type '" .. tostring(type) .. "' not found in Init")
-        return nil
-    end
+	if Init[type] then
+		return Init[type]
+	else
+		_G.__internal_debug("Type '" .. tostring(type) .. "' not found in Init")
+		return nil
+	end
 end
 
 return Init

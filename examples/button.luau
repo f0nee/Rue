@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RueFolder = ReplicatedStorage:WaitForChild("Rue")
-local Rue = require(RueFolder)
+local Rue = require(RueFolder:WaitForChild("Init"))
 local Components = Rue.new("Components")
 local Styler = Components.new("Styler")
 
@@ -17,14 +17,14 @@ Gui.ResetOnSpawn = false
 -- Create button and apply styles
 local Button = Components.new("Button", Gui)
 Styler.ApplyStyle(Button, { -- Rue's current sizing system is not perfect, so you may need to adjust sizes manually
-    BackgroundColor3 = "blue-500",
-    Font = "source-sans",
-    TextSize = 18,
-    TextColor3 = "white",
-    RichText = true,
-    Position = "center",
-    AnchorPoint = "center",
-    Text = "<b>Click Me!</b>",
+	BackgroundColor = "rose-500",
+	Font = "source-sans",
+	TextSize = 18,
+	TextColor = "rose-50",
+	RichText = true,
+	Position = "center",
+	AnchorPoint = "center",
+	Text = "<b>Click Me!</b>",
 })
 
 Button.Size = UDim2.new(0, 200, 0, 50) -- Set size manually for now
