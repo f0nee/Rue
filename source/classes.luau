@@ -39,7 +39,7 @@ Classes.Colors = {
     ["pink-A700"] = Color3.fromRGB(197, 17, 98),
 
     -- Purple
-    ["pu rple-50"] = Color3.fromRGB(243, 229, 245),
+    ["purple-50"] = Color3.fromRGB(243, 229, 245),
     ["purple-100"] = Color3.fromRGB(225, 190, 231),
     ["purple-200"] = Color3.fromRGB(206, 147, 216),
     ["purple-300"] = Color3.fromRGB(186, 104, 200),
@@ -281,6 +281,137 @@ Classes.Colors = {
     ["blue-gray-700"] = Color3.fromRGB(69, 90, 100),
     ["blue-gray-800"] = Color3.fromRGB(55, 71, 79),
     ["blue-gray-900"] = Color3.fromRGB(38, 50, 56),
+
+    -- Rose
+    ["rose-50"] = Color3.fromRGB(255, 241, 242),
+    ["rose-100"] = Color3.fromRGB(255, 228, 230),
+    ["rose-200"] = Color3.fromRGB(254, 205, 211),
+    ["rose-300"] = Color3.fromRGB(253, 164, 175),
+    ["rose-400"] = Color3.fromRGB(251, 113, 133),
+    ["rose-500"] = Color3.fromRGB(244, 63, 94),
+    ["rose-600"] = Color3.fromRGB(225, 29, 72),
+    ["rose-700"] = Color3.fromRGB(190, 18, 60),
+    ["rose-800"] = Color3.fromRGB(159, 18, 57),
+    ["rose-900"] = Color3.fromRGB(136, 19, 55),
+
+    -- Fuchsia
+    ["fuchsia-50"] = Color3.fromRGB(253, 244, 255),
+    ["fuchsia-100"] = Color3.fromRGB(250, 232, 255),
+    ["fuchsia-200"] = Color3.fromRGB(245, 208, 254),
+    ["fuchsia-300"] = Color3.fromRGB(240, 171, 252),
+    ["fuchsia-400"] = Color3.fromRGB(232, 121, 249),
+    ["fuchsia-500"] = Color3.fromRGB(217, 70, 239),
+    ["fuchsia-600"] = Color3.fromRGB(192, 38, 211),
+    ["fuchsia-700"] = Color3.fromRGB(162, 28, 175),
+    ["fuchsia-800"] = Color3.fromRGB(134, 25, 143),
+    ["fuchsia-900"] = Color3.fromRGB(112, 26, 117),
+
+    -- Emerald
+    ["emerald-50"] = Color3.fromRGB(236, 253, 245),
+    ["emerald-100"] = Color3.fromRGB(209, 250, 229),
+    ["emerald-200"] = Color3.fromRGB(167, 243, 208),
+    ["emerald-300"] = Color3.fromRGB(110, 231, 183),
+    ["emerald-400"] = Color3.fromRGB(52, 211, 153),
+    ["emerald-500"] = Color3.fromRGB(16, 185, 129),
+    ["emerald-600"] = Color3.fromRGB(5, 150, 105),
+    ["emerald-700"] = Color3.fromRGB(4, 120, 87),
+    ["emerald-800"] = Color3.fromRGB(6, 95, 70),
+    ["emerald-900"] = Color3.fromRGB(6, 78, 59),
+
+    -- Slate
+    ["slate-50"] = Color3.fromRGB(248, 250, 252),
+    ["slate-100"] = Color3.fromRGB(241, 245, 249),
+    ["slate-200"] = Color3.fromRGB(226, 232, 240),
+    ["slate-300"] = Color3.fromRGB(203, 213, 225),
+    ["slate-400"] = Color3.fromRGB(148, 163, 184),
+    ["slate-500"] = Color3.fromRGB(100, 116, 139),
+    ["slate-600"] = Color3.fromRGB(71, 85, 105),
+    ["slate-700"] = Color3.fromRGB(51, 65, 85),
+    ["slate-800"] = Color3.fromRGB(30, 41, 59),
+    ["slate-900"] = Color3.fromRGB(15, 23, 42),
+}
+
+Classes.Font = {
+    ["roboto"] = Enum.Font.Roboto,
+    ["source-sans-pro"] = Enum.Font.SourceSansPro,
+    ["gotham"] = Enum.Font.Gotham,
+    ["arial"] = Enum.Font.Arial,
+    ["cartoon"] = Enum.Font.Cartoon,
+    ["fantasy"] = Enum.Font.Fantasy,
+    ["arcade"] = Enum.Font.Arcade,
+    ["bangers"] = Enum.Font.Bangers,
+    ["cursive"] = Enum.Font.Cursive,
+    ["fredoka-one"] = Enum.Font.FredokaOne,
+    ["garamond"] = Enum.Font.Garamond,
+    ["georgia"] = Enum.Font.Georgia,
+    ["gotham-bold"] = Enum.Font.GothamBold,
+    ["gotham-black"] = Enum.Font.GothamBlack,
+    ["gotham-semi-bold"] = Enum.Font.GothamSemibold,
+    ["permanent-marker"] = Enum.Font.PermanentMarker,
+    ["roboto-mono"] = Enum.Font.RobotoMono,
+    ["sci-fi"] = Enum.Font.SciFi,
+    ["source-sans"] = Enum.Font.SourceSans,
+    ["source-sans-bold"] = Enum.Font.SourceSansBold,
+}
+
+Classes.FontStyles = {
+    ["normal"] = Enum.FontStyle.Normal,
+    ["bold"] = Enum.FontStyle.Bold,
+    ["italic"] = Enum.FontStyle.Italic,
+    ["bold-italic"] = Enum.FontStyle.BoldItalic,
+}
+
+Classes.RichText = {
+    ["richtext-on"] = true,
+    ["richtext-off"] = false,
+}
+
+Classes.Size = {
+    ["w-full"] = function(parent) return UDim2.fromScale(1, parent.Size.Y.Scale) end,
+    ["h-full"] = function(parent) return UDim2.fromScale(parent.Size.X.Scale, 1) end,
+
+    ["w-1/2"] = UDim2.fromScale(0.5, 0),
+    ["h-1/2"] = UDim2.fromScale(0, 0.5),
+
+    ["w-100"] = UDim2.fromOffset(100, 0),
+    ["h-100"] = UDim2.fromOffset(0, 100),
+
+    -- padding/margin (UI constraints use)
+    ["p-4"] = UDim.new(0, 4),
+    ["p-8"] = UDim.new(0, 8),
+    ["m-4"] = UDim.new(0, 4),
+    ["m-8"] = UDim.new(0, 8),
+}
+
+Classes.Font = {
+    ["roboto"] = Enum.Font.Roboto,
+    ["source-sans-pro"] = Enum.Font.SourceSansPro,
+    ["gotham"] = Enum.Font.Gotham,
+    ["arial"] = Enum.Font.Arial,
+}
+
+Classes.Position = {
+    ["center"] = UDim2.fromScale(0.5, 0.5),
+    ["top-left"] = UDim2.fromScale(0, 0),
+    ["top-center"] = UDim2.fromScale(0.5, 0),
+    ["top-right"] = UDim2.fromScale(1, 0),
+    ["middle-left"] = UDim2.fromScale(0, 0.5),
+    ["middle-right"] = UDim2.fromScale(1, 0.5),
+    ["bottom-left"] = UDim2.fromScale(0, 1),
+    ["bottom-center"] = UDim2.fromScale(0.5, 1),
+    ["bottom-right"] = UDim2.fromScale(1, 1),
+}
+
+Classes.AnchorPoint = {
+    ["ap-center"] = Vector2.new(0.5, 0.5),
+    ["ap-top-left"] = Vector2.new(0, 0),
+    ["ap-top-center"] = Vector2.new(0.5, 0),
+    ["ap-top-right"] = Vector2.new(1, 0),
+    ["ap-middle-left"] = Vector2.new(0, 0.5),
+    ["ap-middle-right"] = Vector2.new(1, 0.5),
+    ["ap-bottom-left"] = Vector2.new(0, 1),
+    ["ap-bottom-center"] = Vector2.new(0.5, 1),
+    ["ap-bottom-right"] = Vector2.new(1, 1),
 }
 
 return Classes
