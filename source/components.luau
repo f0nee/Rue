@@ -5,78 +5,74 @@
 local Style = require(script.Parent.Style)
 
 local Components = {
-    Templates = {
-        Button = {
-            Properties = {
-                BackgroundColor3 = "grey-800",
-                TextColor3 = "rose-50", -- white text
-                Font = "source-sans",
-                TextSize = 14,
-                Text = "Hello, World!"
-            }
-        }
-    }
+	Templates = {
+		Button = {
+			Properties = {
+				BackgroundColor3 = "grey-800",
+				TextColor3 = "rose-50", -- white text
+				Font = "source-sans",
+				TextSize = 14,
+				Text = "Hello, World!"
+			}
+		}
+	}
 }
 
 local CreatedUIs = {}
 
 local function GetTemplate(Template)
-    return Components.Templates[Template]
+	return Components.Templates[Template]
 end
 
 Components.new = function(type, parent)
-    local Object = nil
+	local Object = nil
 
-    if type:lower() == "styler" then
-        Object = Style
-    elseif type:lower() == "button" then
-        local Template = GetTemplate("Button")
-        local Button = Instance.new("TextButton")
-        
-        Style.ApplyStyle(Button, Template.Properties)
+	if type:lower() == "styler" then
+		Object = Style
+	elseif type:lower() == "button" then
+		local Template = GetTemplate("Button")
+		local Button = Instance.new("TextButton")
 
-        Object = Button
-    elseif type:lower() == "gui" or type:lower() == "screengui" then
-        local Gui = Instance.new("ScreenGui")
+		Style.ApplyStyle(Button, Template.Properties)
 
-        table.insert(CreatedUIs, Gui)
+		Object = Button
+	elseif type:lower() == "gui" or type:lower() == "screengui" then
+		local Gui = Instance.new("ScreenGui")
 
-        Object = Gui
-    else
-        _G.__internal_debug("Component type " .. tostring(type) .. " not found")
-    end
+		table.insert(CreatedUIs, Gui)
 
-    if Object then
-        if parent then
-            Object.Parent = parent
-        else
-            _G.__internal_debug("Parent not specified")
-        end
+		Object = Gui
+	else
+		_G.__internal_debug("Component type " .. tostring(type) .. " not found")
+	end
 
-        if Object:IsA("ScreenGui") then
-            table.insert(CreatedUIs, Object)
-        end
+	if Object then
+		if parent then
+			Object.Parent = parent
+		else
+			_G.__internal_debug("Parent not specified")
+		end
 
-        return Object
-    else
-        _G.__internal_debug("Failed to create component of type " .. tostring(type))
-        return nil
-    end
+		return Object
+	else
+		_G.__internal_debug("Failed to create component of type " .. tostring(type))
+		return nil
+	end
 end
 
 Components.mount = function(instance, parent)
-    if instance and parent then
-        if table.find(CreatedUIs, instance) then
-            _G.__internal_debug("Instance not created by Rue, cannot mount")
-            return nil
-        else
-            instance.Parent = parent
-            return instance
-        end
-    else
-        _G.__internal_debug("Instance or parent is nil")
-        return nil
-    end
+	if instance and parent then
+		if table.find(CreatedUIs, instance) then
+			_G.__internal_debug("Instance not created by Rue, cannot mount")
+			return nil
+		else
+			instance.Parent = parent
+			return instance
+		end
+	else
+		_G.__internal_debug("Instance or parent is nil")
+		return nil
+	end
 end
 
 return Components
