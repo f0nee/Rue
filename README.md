@@ -1,3 +1,3 @@
 # Rue 1.0
 
-Modular Framework for Roblox LuaU
+An modular framework created for Roblox LuaU by fone (@autogostupid)
