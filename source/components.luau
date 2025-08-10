@@ -8,7 +8,11 @@ local Components = {
     Templates = {
         Button = {
             Properties = {
-                BackgroundColor3 = "red-100"
+                BackgroundColor3 = "grey-800",
+                TextColor3 = "rose-50", -- white text
+                Font = "source-sans",
+                TextSize = 14,
+                Text = "Hello, World!"
             }
         }
     }
@@ -20,24 +24,42 @@ local function GetTemplate(Template)
     return Components.Templates[Template]
 end
 
-Components.new = function(type)
+Components.new = function(type, parent)
+    local Object = nil
+
     if type:lower() == "styler" then
-        return Style
+        Object = Style
     elseif type:lower() == "button" then
         local Template = GetTemplate("Button")
         local Button = Instance.new("TextButton")
         
         Style.ApplyStyle(Button, Template.Properties)
 
-        return Button
+        Object = Button
     elseif type:lower() == "gui" or type:lower() == "screengui" then
         local Gui = Instance.new("ScreenGui")
 
         table.insert(CreatedUIs, Gui)
 
-        return Gui
+        Object = Gui
     else
         _G.__internal_debug("Component type " .. tostring(type) .. " not found")
+    end
+
+    if Object then
+        if parent then
+            Object.Parent = parent
+        else
+            _G.__internal_debug("Parent not specified")
+        end
+
+        if Object:IsA("ScreenGui") then
+            table.insert(CreatedUIs, Object)
+        end
+
+        return Object
+    else
+        _G.__internal_debug("Failed to create component of type " .. tostring(type))
         return nil
     end
 end

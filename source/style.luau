@@ -1,7 +1,6 @@
 -- style.luau
 -- created by @autogostupid
 -- last edited by @autogostupid (8/9/25)
-
 --[[
 
     Style - Rue Component Module
@@ -9,11 +8,10 @@
     Provides styling functionality for UI components in Rue.
     This module allows you to apply styles to UI elements such as TextButtons, Frames, etc
 
-]]--
-
+]] --
 local Classes = require(script.Parent.Classes)
 
-local function __internal_SetColor(instance, type,  color)
+local function __internal_SetColor(instance, type, color)
     if color == "transparent" and (type == "Frame" or type == "Text") then
         instance.BackgroundTransparency = 1
     elseif Classes.Colors[color] and type == "Frame" then
@@ -66,6 +64,31 @@ Style.ApplyStyle = function(instance, property)
         else
             _G.__internal_debug("RichText not specified, using default value")
             instance.RichText = Classes.RichText["richtext-off"]
+        end
+
+        if property.Text then
+            instance.Text = property.Text
+        else
+            _G.__internal_debug("Text not specified, using default text")
+            instance.Text = ""
+        end
+
+        if property.Position then
+            instance.Position = Classes.Position[property.Position]
+        else
+            _G.__internal_debug("Position '" .. tostring(property.Position) .. "' not found in Classes.Position")
+        end
+
+        if property.AnchorPoint then
+            instance.AnchorPoint = Classes.AnchorPoint[property.AnchorPoint]
+        else
+            _G.__internal_debug("AnchorPoint '" .. tostring(property.AnchorPoint) .. "' not found in Classes.AnchorPoint")
+        end
+
+        if property.Size then
+            instance.Size = Classes.Size[property.Size]
+        else
+            _G.__internal_debug("Size '" .. tostring(property.Size) .. "' not found in Classes.Size")
         end
     else
         _G.__internal_debug("Instance or property is nil")

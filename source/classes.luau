@@ -403,15 +403,15 @@ Classes.Position = {
 }
 
 Classes.AnchorPoint = {
-    ["ap-center"] = Vector2.new(0.5, 0.5),
-    ["ap-top-left"] = Vector2.new(0, 0),
-    ["ap-top-center"] = Vector2.new(0.5, 0),
-    ["ap-top-right"] = Vector2.new(1, 0),
-    ["ap-middle-left"] = Vector2.new(0, 0.5),
-    ["ap-middle-right"] = Vector2.new(1, 0.5),
-    ["ap-bottom-left"] = Vector2.new(0, 1),
-    ["ap-bottom-center"] = Vector2.new(0.5, 1),
-    ["ap-bottom-right"] = Vector2.new(1, 1),
+    ["center"] = Vector2.new(0.5, 0.5),
+    ["top-left"] = Vector2.new(0, 0),
+    ["top-center"] = Vector2.new(0.5, 0),
+    ["top-right"] = Vector2.new(1, 0),
+    ["middle-left"] = Vector2.new(0, 0.5),
+    ["middle-right"] = Vector2.new(1, 0.5),
+    ["bottom-left"] = Vector2.new(0, 1),
+    ["bottom-center"] = Vector2.new(0.5, 1),
+    ["bottom-right"] = Vector2.new(1, 1),
 }
 
 return Classes
