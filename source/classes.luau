@@ -333,17 +333,15 @@ Classes.Colors = {
 
 Classes.Fonts = {
 	["roboto"] = Enum.Font.Roboto,
-	["source-sans-pro"] = Enum.Font.SourceSansPro,
+	["source-sans-pro"] = Enum.Font.SourceSans,
 	["gotham"] = Enum.Font.Gotham,
 	["arial"] = Enum.Font.Arial,
 	["cartoon"] = Enum.Font.Cartoon,
 	["fantasy"] = Enum.Font.Fantasy,
 	["arcade"] = Enum.Font.Arcade,
 	["bangers"] = Enum.Font.Bangers,
-	["cursive"] = Enum.Font.Cursive,
 	["fredoka-one"] = Enum.Font.FredokaOne,
 	["garamond"] = Enum.Font.Garamond,
-	["georgia"] = Enum.Font.Georgia,
 	["gotham-bold"] = Enum.Font.GothamBold,
 	["gotham-black"] = Enum.Font.GothamBlack,
 	["gotham-semi-bold"] = Enum.Font.GothamSemibold,
@@ -356,9 +354,8 @@ Classes.Fonts = {
 
 Classes.FontStyles = {
 	["normal"] = Enum.FontStyle.Normal,
-	["bold"] = Enum.FontStyle.Bold,
-	["italic"] = Enum.FontStyle.Italic,
-	["bold-italic"] = Enum.FontStyle.BoldItalic,
+	["bold"] = Enum.FontWeight.Bold,
+	["italic"] = Enum.FontStyle.Italic
 }
 
 Classes.RichText = {
@@ -381,13 +378,6 @@ Classes.Size = {
 	["p-8"] = UDim.new(0, 8),
 	["m-4"] = UDim.new(0, 4),
 	["m-8"] = UDim.new(0, 8),
-}
-
-Classes.Font = {
-	["roboto"] = Enum.Font.Roboto,
-	["source-sans-pro"] = Enum.Font.SourceSansPro,
-	["gotham"] = Enum.Font.Gotham,
-	["arial"] = Enum.Font.Arial,
 }
 
 Classes.Position = {
