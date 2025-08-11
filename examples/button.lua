@@ -1,22 +1,22 @@
--- Button with Rue :)
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local RueFolder = ReplicatedStorage:WaitForChild("Rue")
-local Rue = require(RueFolder:WaitForChild("Init"))
-local Components = Rue.new("Components")
-local Styler = Components.new("Styler")
+-- button with Rue :)
+local players = game:GetService("Players")
+local localPlayer = players.LocalPlayer
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local rueFolder = replicatedStorage:WaitForChild("Rue")
+local rue = require(rueFolder:WaitForChild("Init"))
+local components = rue.new("components")
+local styler = components.new("styler")
 
--- This creates a Gui and stores it so exploiters cant use mount to parent themselves (just a little secure ig?)
-local Gui = Components.new("Gui", LocalPlayer.PlayerGui)
+-- this creates a Gui and stores it so exploiters cant use mount to parent themselves (just a little secure ig?)
+local gui = components.new("gui", localPlayer.PlayerGui)
 
--- Set properties as its a real Gui, as Components.new returns an instance or module
-Gui.Name = "RueGui"
-Gui.ResetOnSpawn = false
+-- set properties as its a real Gui, as components.new returns an instance or module
+gui.Name = "RueGui"
+gui.ResetOnSpawn = false
 
--- Create button and apply styles
-local Button = Components.new("Button", Gui)
-Styler.ApplyStyle(Button, { -- Rue's current sizing system is not perfect, so you may need to adjust sizes manually
+-- create button and apply styles
+local button = components.new("button", gui)
+styler.applyStyle(button, { -- rue's current sizing system is not perfect, so you may need to adjust sizes manually
 	BackgroundColor = "rose-500",
 	Font = "source-sans",
 	TextSize = 18,
@@ -26,8 +26,8 @@ Styler.ApplyStyle(Button, { -- Rue's current sizing system is not perfect, so yo
 	AnchorPoint = "center",
 	Text = "<b>Click Me!</b>",
 })
-Components.event(Button, "click", function() 
+components.event(button, "click", function() 
 	print("this should print to client :eyes:")
 end)
 
-Button.Size = UDim2.new(0, 200, 0, 50) -- Set size manually for now
+button.Size = UDim2.new(0, 200, 0, 50) -- set size manually for now

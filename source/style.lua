@@ -29,7 +29,7 @@ end
 
 local Style = {}
 
-Style.ApplyStyle = function(instance, property)
+Style.applyStyle = function(instance, property)
 	if instance and property then
 		if property.BackgroundColor then
 			__internal_SetColor(instance, "Frame", property.BackgroundColor)

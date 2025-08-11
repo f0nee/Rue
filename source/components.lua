@@ -37,7 +37,7 @@ Components.new = function(type, parent)
 		local Template = GetTemplate("Button")
 		local Button = Instance.new("TextButton")
 
-		Style.ApplyStyle(Button, Template.Properties)
+		Style.applyStyle(Button, Template.Properties)
 
 		Object = Button
 	elseif type:lower() == "gui" or type:lower() == "screengui" then
