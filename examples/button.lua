@@ -10,13 +10,13 @@ local styler = components.new("styler")
 -- this creates a Gui and stores it so exploiters cant use mount to parent themselves (just a little secure ig?)
 local gui = components.new("gui", localPlayer.PlayerGui)
 
--- set properties as its a real Gui, as components.new returns an instance or module
-gui.Name = "RueGui"
-gui.ResetOnSpawn = false
+-- you will need to use object.instance
+gui.instance.Name = "RueGui"
+gui.instance.ResetOnSpawn = false
 
 -- create button and apply styles
 local button = components.new("button", gui)
-styler.applyStyle(button, { -- rue's current sizing system is not perfect, so you may need to adjust sizes manually
+styler.applyStyle(button.instance, { -- rue's current sizing system is not perfect, so you may need to adjust sizes manually
 	BackgroundColor = "rose-500",
 	Font = "source-sans",
 	TextSize = 18,
@@ -26,7 +26,7 @@ styler.applyStyle(button, { -- rue's current sizing system is not perfect, so yo
 	AnchorPoint = "center",
 	Text = "<b>Click Me!</b>",
 })
-components.event(button, "click", function() 
+button.event("click", function() 
 	print("this should print to client :eyes:")
 end)
 
