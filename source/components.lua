@@ -95,7 +95,11 @@ Components.new = function(type, parent)
 			
 			event = function(eventName, func)
 				return Components.event(Object, eventName, func)
-			end
+			end,
+
+			new = function(typeNew)
+				return Components.new(typeNew, Object)
+			end,
 		}
 	else
 		_G.__internal_debug("Failed to create component of type " .. tostring(type))

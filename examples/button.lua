@@ -15,7 +15,7 @@ gui.instance.Name = "RueGui"
 gui.instance.ResetOnSpawn = false
 
 -- create button and apply styles
-local button = components.new("button", gui)
+local button = gui.new("button")
 styler.applyStyle(button.instance, { -- rue's current sizing system is not perfect, so you may need to adjust sizes manually
 	BackgroundColor = "rose-500",
 	Font = "source-sans",
