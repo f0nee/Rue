@@ -14,6 +14,10 @@ local Components = {
 				TextSize = 14,
 				Text = "Hello, World!"
 			}
+		},
+
+		Frame = {
+
 		}
 	}
 }
@@ -58,6 +62,27 @@ Components.new = function(type, parent)
 		_G.__internal_debug("Failed to create component of type " .. tostring(type))
 		return nil
 	end
+end
+
+Components.event = function(instance, event, func)
+	if typeof(func) ~= "function" then
+		_G.__internal_debug("Function not supplied")
+		return nil
+	end
+
+	if instance:IsA("GuiButton") then
+		if event:lower() == "click" then
+			event.MouseButton1Click:Connect(function()
+				func()
+			end)
+
+			return true
+		end
+	end
+
+	_G.__internal_debug("Wrong argument")
+
+	return nil
 end
 
 Components.mount = function(instance, parent)
