@@ -26,5 +26,8 @@ Styler.ApplyStyle(Button, { -- Rue's current sizing system is not perfect, so yo
 	AnchorPoint = "center",
 	Text = "<b>Click Me!</b>",
 })
+Components.event(Button, "click", function() 
+	print("this should print to client :eyes:")
+end)
 
 Button.Size = UDim2.new(0, 200, 0, 50) -- Set size manually for now
