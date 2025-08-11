@@ -2,8 +2,8 @@
 local players = game:GetService("Players")
 local localPlayer = players.LocalPlayer
 local replicatedStorage = game:GetService("ReplicatedStorage")
-local rueFolder = replicatedStorage:WaitForChild("Rue")
-local rue = require(rueFolder:WaitForChild("Init"))
+local shared = replicatedStorage:WaitForChild("Shared")
+local rue = require(shared:WaitForChild("Rue"))
 local components = rue.new("components")
 local styler = components.new("styler")
 

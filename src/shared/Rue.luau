@@ -17,15 +17,15 @@ _G.__internal_debug = function(message)
 end
 
 local Init = {
-	Components = require(script.Parent.Components),
-	Classes = require(script.Parent.Classes),
+	components = require(script.Parent.Components),
+	classes = require(script.Parent.Classes),
 }
 
 Init.new = function(type)
-	if Init[type] then
-		return Init[type]
+	if Init[type:lower()] then
+		return Init[type:lower()]
 	else
-		_G.__internal_debug("Type '" .. tostring(type) .. "' not found in Init")
+		_G.__internal_debug("Type '" .. tostring(type:lower()) .. "' not found in Init")
 		return nil
 	end
 end
