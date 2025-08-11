@@ -1,6 +1,6 @@
--- classes.luau
+-- Classes.luau
 -- created by @autogostupid
--- last edited by @autogostupid (8/9/25)
+-- last edited by @autogostupid (8/11/25)
 
 local Classes = {}
 

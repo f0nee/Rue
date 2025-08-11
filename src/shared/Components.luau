@@ -1,6 +1,6 @@
--- components.luau
+-- Components.luau
 -- created by @autogostupid
--- last edited by @autogostupid (8/9/25)
+-- last edited by @autogostupid (8/11/25)
 
 local Style = require(script.Parent.Style)
 
@@ -8,11 +8,13 @@ local Components = {
 	Templates = {
 		Button = {
 			Properties = {
-				BackgroundColor3 = "grey-800",
-				TextColor3 = "rose-50", -- white text
+				BackgroundColor = "grey-800",
+				TextColor = "rose-50", -- white text
 				Font = "source-sans",
-				TextSize = 14,
-				Text = "Hello, World!"
+				TextSize = 24,
+				Text = "Smiley Button :)",
+				AnchorPoint = "center",
+				Position = "center"
 			}
 		},
 

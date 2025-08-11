@@ -1,6 +1,7 @@
--- style.luau
+-- Style.luau
 -- created by @autogostupid
--- last edited by @autogostupid (8/9/25)
+-- last edited by @autogostupid (8/11/25)
+
 --[[
 
     Style - Rue Component Module
@@ -9,6 +10,7 @@
     This module allows you to apply styles to UI elements such as TextButtons, Frames, etc
 
 ]] --
+ 
 local Classes = require(script.Parent.Classes)
 
 local function __internal_SetColor(instance, type, color)
@@ -31,10 +33,13 @@ local Style = {}
 
 Style.applyStyle = function(instance, property)
 	if instance and property then
+		print(property)
+		print(instance)
+
 		if property.BackgroundColor then
 			__internal_SetColor(instance, "Frame", property.BackgroundColor)
 		else
-			_G.__internal_debug("BackgroundColor3 not specified, using default color")
+			_G.__internal_debug("BackgroundColor not specified, using default color")
 			__internal_SetColor(instance, "Frame", "gray-50")
 		end
 
@@ -46,7 +51,13 @@ Style.applyStyle = function(instance, property)
 		end
 
 		if property.TextSize then
-			instance.TextSize = property.TextSize
+			if typeof(property.TextSize) ~= "number" then
+				if property.TextSize == "scaled" then 
+					instance.TextScaled = true
+				end
+			else
+				instance.TextSize = property.TextSize
+			end
 		else
 			_G.__internal_debug("TextSize not specified, using default size")
 			instance.TextSize = 14
@@ -55,7 +66,7 @@ Style.applyStyle = function(instance, property)
 		if property.TextColor then
 			__internal_SetColor(instance, "Text", property.TextColor)
 		else
-			_G.__internal_debug("TextColor3 not specified, using default color")
+			_G.__internal_debug("TextColor not specified, using default color")
 			__internal_SetColor(instance, "Text", "rose-50")
 		end
 
