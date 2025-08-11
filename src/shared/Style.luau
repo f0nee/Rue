@@ -10,7 +10,7 @@
     This module allows you to apply styles to UI elements such as TextButtons, Frames, etc
 
 ]] --
- 
+
 local Classes = require(script.Parent.Classes)
 
 local function __internal_SetColor(instance, type, color)
@@ -33,9 +33,6 @@ local Style = {}
 
 Style.applyStyle = function(instance, property)
 	if instance and property then
-		print(property)
-		print(instance)
-
 		if property.BackgroundColor then
 			__internal_SetColor(instance, "Frame", property.BackgroundColor)
 		else
