@@ -72,7 +72,19 @@ Components.event = function(instance, event, func)
 
 	if instance:IsA("GuiButton") then
 		if event:lower() == "click" then
-			event.MouseButton1Click:Connect(function()
+			instance.MouseButton1Click:Connect(function()
+				func()
+			end)
+
+			return true
+		elseif event:lower() == "hover" then
+			instance.MouseEnter:Connect(function()
+				func()
+			end)
+
+			return true
+		elseif event:lower() == "leave" then
+			instance.MouseLeave:Connect(function()
 				func()
 			end)
 
