@@ -15,8 +15,12 @@ local gui = components.new("gui", localPlayer.PlayerGui)
 gui.instance.Name = "RueGui"
 gui.instance.ResetOnSpawn = false
 
+-- test
+local frame = gui.new("frame")
+frame.instance.Size = UDim2.new(0, 450, 0, 300)
+
 -- create button and apply styles
-local button = gui.new("button")
+local button = frame.new("button")
 styler.applyStyle(button.instance, { -- rue's current sizing system is not perfect, so you may need to adjust sizes manually
 	BackgroundColor = "rose-500",
 	Font = "source-sans",
