@@ -1,7 +1,8 @@
 -- Components.luau
 -- created by @autogostupid
 -- last edited by @autogostupid (8/11/25)
-local Style = require(script.Parent.Style)
+
+local Style = require(script.Parent.mods.official["rue-project@styler"].module) -- workaround because i cant require Rue (cyclic dependency)
 
 local Components = {
     Templates = {
@@ -90,9 +91,7 @@ end
 Components.new = function(type, parent)
     local Object = nil
 
-    if type:lower() == "styler" then
-        return Style
-    elseif type:lower() == "button" then
+    if type:lower() == "button" then
         local Template = GetTemplate("Button")
         local Button = Instance.new("TextButton")
 
