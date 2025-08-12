@@ -13,7 +13,8 @@ local Components = {
                 TextSize = 24,
                 Text = "Smiley Button :)",
                 AnchorPoint = "center",
-                Position = "center"
+                Position = {"anchored", 0.5, 0.5},
+                Size = {"anchored", 0.4, 0.3}
             }
         },
 
@@ -21,9 +22,10 @@ local Components = {
             Properties = {
                 BackgroundColor = "gray-400",
                 AnchorPoint = "center",
-                Position = "center",
+                Position = {"anchored", 0.5, 0.5},
                 BorderRadius = 16,
-                Stroke = {"gray-900", 2}
+                Stroke = {"gray-900", 2},
+                Size = {"anchored", 0.4, 0.2}
             }
         }
     }

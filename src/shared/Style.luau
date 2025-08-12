@@ -72,7 +72,11 @@ Style.applyStyle = function(instance, property)
 		end
 
 		if property.Size then
-			instance.Size = Classes.Size[property.Size]
+			if typeof(instance) ~= "table" then
+				
+			elseif Classes.Size[property.Size] then
+				instance.Size = Classes.Size[property.Size]
+			end
 		end
 
 		if property.BorderRadius then
