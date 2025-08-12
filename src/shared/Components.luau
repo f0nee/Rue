@@ -19,6 +19,19 @@ local Components = {
             }
         },
 
+        ImageButton = {
+            Properties = {
+                BackgroundColor = "gray-800",
+                Font = "source-sans",
+                TextSize = 24,
+                Image = "rbxgameasset://Images/face.png",
+                ImageColor = "red-500",
+                AnchorPoint = "center",
+                Position = {"anchored", 0.5, 0.5},
+                Size = {"anchored", 0.4, 0.3}
+            }
+        },
+
         Frame = {
             Properties = {
                 BackgroundColor = "gray-400",
@@ -93,29 +106,28 @@ Components.new = function(type, parent)
 
     if type:lower() == "button" then
         local Template = GetTemplate("Button")
-        local Button = Instance.new("TextButton")
+        Object = Instance.new("TextButton")
 
-        Style.applyStyle(Button, Template.Properties)
-
-        Object = Button
+        Style.applyStyle(Object, Template.Properties)
     elseif type:lower() == "gui" then
         local Gui = Instance.new("ScreenGui")
 
         Object = Gui
 	elseif type:lower() == "frame" then 
         local Template = GetTemplate("Frame")
-        local Frame = Instance.new("Frame")
+        Object = Instance.new("Frame")
 
-        Style.applyStyle(Frame, Template.Properties)
-
-        Object = Frame
+        Style.applyStyle(Object, Template.Properties)
     elseif type:lower() == "image" then 
         local Template = GetTemplate("Image")
-        local Image = Instance.new("ImageLabel")
+        Object = Instance.new("ImageLabel")
 
-        Style.applyStyle(Image, Template.Properties)
-    
-        Object = Image
+        Style.applyStyle(Object, Template.Properties)
+    elseif type:lower() == "imagebutton" then
+        local Template = GetTemplate("ImageButton")
+        Object = Instance.new("ImageButton")
+
+        Style.applyStyle(Object, Template.Properties)
     else
         _G.__internal_debug("Component type " .. tostring(type) .. " not found")
     end
