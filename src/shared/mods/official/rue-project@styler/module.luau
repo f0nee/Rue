@@ -1,6 +1,5 @@
--- Style.luau
 -- created by @autogostupid
--- last edited by @autogostupid (8/11/25)
+-- last edited by @autogostupid (8/12/25)
 
 --[[
 
@@ -11,6 +10,7 @@
 
 ]] --
 
+local RueBase = script.Parent.Parent
 local Classes = require(script.Parent.Classes)
 
 local function __internal_SetColor(instance, type, color)
@@ -31,7 +31,21 @@ local function __internal_SetColor(instance, type, color)
 	end
 end
 
-local Style = {}
+local Style = {
+	__RUE_INFO = {
+		Creator = "Rue",
+		Project = "Rue Project",
+		Name = "Styler",
+		Version = 1.0,
+		Link = "https://github.com/f0nee/Rue/main/src/shared/mods/official/rue-project@styler/",
+		Description = [[
+			No need for a bunch of .instance in your code, use Styler!
+			Styler is indeed limited right now so for now if we dont support anything you want then use object.instance
+		]]
+	},
+
+	__RUE = true -- is Official/Base RUE Module? Load immediately or put on backburner (Rue.luau communicates)
+}
 
 Style.applyStyle = function(instance, property)
 	if instance and property then
