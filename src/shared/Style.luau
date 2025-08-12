@@ -20,6 +20,8 @@ local function __internal_SetColor(instance, type, color)
 		instance.BackgroundColor3 = Classes.Colors[color]
 	elseif Classes.Colors[color] and type == "Text" then
 		instance.TextColor3 = Classes.Colors[color]
+	elseif Classes.Colors[color] and type == "Image" then
+		instance.ImageColor3 = Classes.Colors[color]
 	else
 		if (type ~= "Frame") and (type ~= "Text") then
 			_G.__internal_debug("Invalid type for color setting: " .. tostring(type))
