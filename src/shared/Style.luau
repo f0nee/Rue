@@ -37,8 +37,10 @@ Style.applyStyle = function(instance, property)
 			__internal_SetColor(instance, "Frame", property.BackgroundColor)
 		end
 
-		if property.Font then
+		if property.Font and Classes.Fonts[property.Font] then
 			instance.Font = Classes.Fonts[property.Font]
+		elseif property.Font and not Classes.Fonts[property.Font] then
+			_G.__internal_debug("Invalid font '" .. property.Font .. "' not found in Classes.luau")
 		end
 
 		if property.TextSize then
@@ -51,8 +53,10 @@ Style.applyStyle = function(instance, property)
 			end
 		end
 
-		if property.TextColor then
+		if property.TextColor and Classes.Colors[property.TextColor] then
 			__internal_SetColor(instance, "Text", property.TextColor)
+		elseif property.TextColor and not Classes.Colors[property.TextColor] then
+			_G.__internal_debug("Invalid color '" .. property.TextColor .. "' not found in Classes.luau")
 		end
 
 		if property.RichText ~= nil then
@@ -79,8 +83,10 @@ Style.applyStyle = function(instance, property)
 			end
 		end
 
-		if property.AnchorPoint then
+		if property.AnchorPoint and Classes.AnchorPoint[property.AnchorPoint] then
 			instance.AnchorPoint = Classes.AnchorPoint[property.AnchorPoint]
+		elseif property.AnchorPoint and not Classes.AnchorPoint[property.AnchorPoint] then
+			_G.__internal_debug("Invalid anchor point '" .. property.AnchorPoint .. "' not found in Classes.luau")
 		end
 
 		if property.Size then
