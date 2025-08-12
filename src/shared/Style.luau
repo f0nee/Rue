@@ -72,10 +72,18 @@ Style.applyStyle = function(instance, property)
 		end
 
 		if property.Size then
-			if typeof(instance) ~= "table" then
-				
+			if typeof(property.Size) == "table" then
+				if property.Size[1] == "anchored" then
+					instance.Size = UDim2.new(property.Size[2], 0, property.Size[3], 0)
+				elseif property.Size[1] == "normal" then
+					instance.Size = UDim2.new(property.Size[2], property.Size[3], property.Size[4], property.Size[5])
+				else
+					_G.__internal_debug("Invalid mode '" .. property.Size[1] .. "' in size table")
+				end
 			elseif Classes.Size[property.Size] then
 				instance.Size = Classes.Size[property.Size]
+			else
+				_G.__internal_debug("Invalid size class '" .. property.Size .. "' not found in Classes.luau")
 			end
 		end
 
