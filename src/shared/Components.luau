@@ -66,7 +66,7 @@ Components.event = function(instance, event, func)
         end
     end
 
-    if instance:IsA("GuiButton") or Instance:IsA("Frame") then
+    if instance:IsA("GuiButton") or Instance:IsA("Frame") or Instance:IsA("ImageLabel") then
         if event:lower() == "hover" then
             instance.MouseEnter:Connect(function()
                 func()
@@ -99,7 +99,7 @@ Components.new = function(type, parent)
         Style.applyStyle(Button, Template.Properties)
 
         Object = Button
-    elseif type:lower() == "gui" or type:lower() == "screengui" then
+    elseif type:lower() == "gui" then
         local Gui = Instance.new("ScreenGui")
 
         Object = Gui
@@ -110,6 +110,13 @@ Components.new = function(type, parent)
         Style.applyStyle(Frame, Template.Properties)
 
         Object = Frame
+    elseif type:lower() == "image" then 
+        local Template = GetTemplate("Image")
+        local Image = Instance.new("ImageLabel")
+
+        Style.applyStyle(Image, Template.Properties)
+    
+        Object = Image
     else
         _G.__internal_debug("Component type " .. tostring(type) .. " not found")
     end
