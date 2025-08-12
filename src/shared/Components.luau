@@ -27,6 +27,19 @@ local Components = {
                 Stroke = {"gray-900", 2},
                 Size = {"anchored", 0.4, 0.2}
             }
+        },
+
+        Image = {
+            Properties = {
+                BackgroundColor = "transparent",
+                AnchorPoint = "center",
+                Position = {"anchored", 0.2, 0.8},
+                Size = {"anchored", 0.2, 0.15},
+                BorderRadius = 8,
+                Image = "rbxgameasset://Images/face.png",
+                ImageColor = "red-500",
+                Rotation = 40
+            }
         }
     }
 }

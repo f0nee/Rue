@@ -120,6 +120,12 @@ Style.applyStyle = function(instance, property)
 
 			UIStroke.Parent = instance
 		end
+
+		if property.ImageColor and Classes.Colors[property.ImageColor] then
+			__internal_SetColor(instance, "Image", property.ImageColor)
+		elseif property.ImageColor and not Classes.Colors[property.ImageColor] then
+			_G.__internal_debug("Invalid image color '" .. property.ImageColor .. "' not found in Classes.luau")
+		end
 	else
 		_G.__internal_debug("Instance or property is nil")
 	end
