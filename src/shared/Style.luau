@@ -64,7 +64,19 @@ Style.applyStyle = function(instance, property)
 		end
 
 		if property.Position then
-			instance.Position = Classes.Position[property.Position]
+			if typeof(property.Position) == "table" then
+				if property.Position[1] == "anchored" then
+					instance.Position = UDim2.new(property.Position[2], 0, property.Position[3], 0)
+				elseif property.Position[1] == "normal" then
+					instance.Position = UDim2.new(property.Position[2], property.Position[3], property.Position[4], property.Position[5])
+				else
+					_G.__internal_debug("Invalid mode '" .. property.Position[1] .. "' in position table")
+				end
+			elseif Classes.Position[property.Position] then
+				instance.Position = Classes.Position[property.Position]
+			else
+				_G.__internal_debug("Invalid position class '" .. property.Position .. "' not found in Classes.luau")
+			end
 		end
 
 		if property.AnchorPoint then
