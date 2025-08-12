@@ -128,6 +128,14 @@ Style.applyStyle = function(instance, property)
 		elseif property.ImageColor and not Classes.Colors[property.ImageColor] then
 			_G.__internal_debug("Invalid image color '" .. property.ImageColor .. "' not found in Classes.luau")
 		end
+
+		if property.Image then
+			instance.Image = property.Image
+		end
+
+		if property.Rotation then
+			instance.Rotation = property.Rotation
+		end
 	else
 		_G.__internal_debug("Instance or property is nil")
 	end
