@@ -10,7 +10,7 @@
 
 ]] --
 
-local RueBase = script.Parent.Parent
+local RueBase = game:GetService("ReplicatedStorage"):WaitForChild("Shared")
 local Classes = require(RueBase.Classes)
 
 local function __internal_SetColor(instance, type, color)

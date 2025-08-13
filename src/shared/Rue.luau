@@ -19,14 +19,13 @@ end
 local function formatName(package)
 	local revisedPackage = {}
 
-	for i, v in pairs(revisedPackage) do
+	for i, v in pairs(package) do
 		if typeof(v) == "string" then
-			revisedPackage[i] = v:lower()
-			revisedPackage[i] = string.replace(revisedPackage[i], " ", "-")
+			revisedPackage[i] = v:gsub(" ", "-"):lower()
 		end
 	end
 
-	return revisedPackage.Owner .. "/" .. revisedPackage.Project .. "@" .. revisedPackage.Name .. "-" .. tostring(revisedPackage.Version)
+	return revisedPackage.Creator .. "/" .. revisedPackage.Project .. "@" .. revisedPackage.Name .. "-" .. tostring(revisedPackage.Version)
 end
 
 local Init = {

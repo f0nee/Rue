@@ -6,7 +6,7 @@ local replicatedStorage = game:GetService("ReplicatedStorage")
 local shared = replicatedStorage:WaitForChild("Shared")
 local rue = require(shared:WaitForChild("Rue"))
 local components = rue.new("components")
-local styler = components.new("styler")
+local styler = rue.new("styler")
 
 -- this creates a Gui and stores it so exploiters cant use mount to parent themselves (just a little secure ig?)
 local gui = components.new("gui", localPlayer.PlayerGui)
