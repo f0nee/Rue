@@ -11,7 +11,7 @@
 ]] --
 
 local RueBase = script.Parent.Parent
-local Classes = require(script.Parent.Classes)
+local Classes = require(RueBase.Classes)
 
 local function __internal_SetColor(instance, type, color)
 	if color == "transparent" and (type == "Frame" or type == "Text") then
