@@ -1,4 +1,4 @@
--- button with Rue :)
+-- button with Rue :) (Outdated)
 local players = game:GetService("Players")
 local tweenService = game:GetService("TweenService")
 local localPlayer = players.LocalPlayer
@@ -35,7 +35,10 @@ styler.applyStyle(button.instance, { -- rue's current sizing system is not perfe
 button.instance.Size = UDim2.new(0, 200, 0, 50) -- set size manually for now
 
 -- test updating sizing + image
-frame.new("image")
+--frame.new("image")
+
+-- test image button?
+--frame.new("imagebutton")
 
 -- button effects
 local tweenInfos = {
