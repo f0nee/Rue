@@ -134,6 +134,16 @@ Components.new = function(type, parent)
 
             new = function(typeNew)
                 return Components.new(typeNew, Object)
+            end,
+
+            setAspectRatio = function(ratio, wh: Enum.DominantAxis, at: Enum.AspectType)
+                local Ratio = Instance.new("UIAspectRatioConstraint")
+
+                Ratio.AspectRatio = ratio
+                Ratio.AspectType = at or Enum.AspectType.FitWithinMaxSize
+                Ratio.DominantAxis = wh or Enum.DominantAxis.Width
+
+                Ratio.Parent = Object
             end
         }
     else
