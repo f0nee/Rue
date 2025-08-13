@@ -103,29 +103,15 @@ Components.new = function(type, parent)
     local Object = nil
 
     if type:lower() == "button" then
-        local Template = GetTemplate("Button")
         Object = Instance.new("TextButton")
-
-        Style.applyStyle(Object, Template.Properties)
     elseif type:lower() == "gui" then
-        local Gui = Instance.new("ScreenGui")
-
-        Object = Gui
+        Object = Instance.new("ScreenGui")
 	elseif type:lower() == "frame" then 
-        local Template = GetTemplate("Frame")
         Object = Instance.new("Frame")
-
-        Style.applyStyle(Object, Template.Properties)
     elseif type:lower() == "image" then 
-        local Template = GetTemplate("Image")
         Object = Instance.new("ImageLabel")
-
-        Style.applyStyle(Object, Template.Properties)
     elseif type:lower() == "imagebutton" then
-        local Template = GetTemplate("ImageButton")
         Object = Instance.new("ImageButton")
-
-        Style.applyStyle(Object, Template.Properties)
     else
         _G.__internal_debug("Component type " .. tostring(type) .. " not found")
     end
