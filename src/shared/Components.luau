@@ -24,7 +24,7 @@ local Components = {
                 BackgroundColor = "gray-800",
                 Font = "source-sans",
                 TextSize = 24,
-                Image = "rbxgameasset://Images/face.png",
+                Image = "rbxasset://textures/face.png",
                 ImageColor = "red-500",
                 AnchorPoint = "center",
                 Position = {"anchored", 0.5, 0.5},
@@ -50,7 +50,7 @@ local Components = {
                 Position = {"anchored", 0.2, 0.8},
                 Size = {"anchored", 0.2, 0.15},
                 BorderRadius = 8,
-                Image = "rbxgameasset://Images/face.png",
+                Image = "rbxasset://textures/face.png",
                 ImageColor = "red-500",
                 Rotation = 40
             }

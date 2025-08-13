@@ -34,6 +34,9 @@ styler.applyStyle(button.instance, { -- rue's current sizing system is not perfe
 
 button.instance.Size = UDim2.new(0, 200, 0, 50) -- set size manually for now
 
+-- test updating sizing + image
+frame.new("image")
+
 -- button effects
 local tweenInfos = {
 	hover = TweenInfo.new(0.2, Enum.EasingStyle.Sine),
