@@ -1,10 +1,10 @@
 -- created by @autogostupid
--- last edited by @autogostupid (8/12/25)
+-- last edited by @autogostupid (8/13/25)
 
 --[[
 
     Style - Rue Component Module
-    Accessible via Components.new("Styler")
+    Accessible via Rue.new("Styler")
     Provides styling functionality for UI components in Rue.
     This module allows you to apply styles to UI elements such as TextButtons, Frames, etc
 
