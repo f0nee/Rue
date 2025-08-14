@@ -150,6 +150,42 @@ Style.applyStyle = function(instance, property)
 		if property.Rotation then
 			instance.Rotation = property.Rotation
 		end
+
+		if property.Placeholder then 
+			instance.PlaceholderText = property.Placeholder
+		end
+
+		if property.ClearTextOnFocus ~= nil then 
+			instance.ClearTextOnFocus = property.ClearTextOnFocus
+		end
+
+		if property.MultiLine ~= nil then 
+			instance.MultiLine = property.MultiLine
+		end
+
+		if property.TextWrapped ~= nil then 
+			instance.TextWrapped = property.TextWrapped
+		end
+
+		if property.AutoButtonColor ~= nil then
+			instance.AutoButtonColor = property.AutoButtonColor
+		end
+
+		if property.Active ~= nil then
+			instance.Active = property.Active
+		end
+
+		if property.ZIndex then
+			instance.ZIndex = property.ZIndex
+		end
+
+		if property.Visible ~= nil then
+			instance.Visible = property.Visible
+		end
+
+		if property.ClipsDescendants ~= nil then
+			instance.ClipsDescendants = property.ClipsDescendants
+		end
 	else
 		_G.__internal_debug("Instance or property is nil")
 	end

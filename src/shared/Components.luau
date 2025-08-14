@@ -112,6 +112,10 @@ Components.new = function(type, parent)
         Object = Instance.new("ImageLabel")
     elseif type:lower() == "imagebutton" then
         Object = Instance.new("ImageButton")
+	elseif type:lower() == "text" then
+		Object = Instance.new("TextLabel")
+	elseif type:lower() == "textbox" then
+		Object = Instance.new("TextBox")
     else
         _G.__internal_debug("Component type " .. tostring(type) .. " not found")
     end
