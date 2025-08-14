@@ -94,6 +94,22 @@ Components.event = function(instance, event, func)
         end
     end
 
+	if instance:IsA("TextBox") then
+		if event:lower("focus") then
+			instance.Focused:Connect(function()
+				func()
+			end)
+
+            return true
+		elseif event:lower("focuslost") then
+			instance.FocusLost:Connect(function()
+				func()
+			end)
+
+            return true
+		end
+	end
+
     _G.__internal_debug("Wrong argument")
 
     return nil
